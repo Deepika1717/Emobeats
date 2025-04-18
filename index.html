@@ -45,14 +45,15 @@
         <input type="text" name="mood" placeholder="I feel happy today..." required>
         <input type="submit" value="Recommend Songs">
     </form>
-
-    {% if song_links %}
-        <div class="songs">
+    <div class="songs">
+        {% if song_links %}
             <h2>Recommended Songs:</h2>
             {% for link in song_links %}
                 <a href="{{ link }}" target="_blank">{{ link }}</a>
             {% endfor %}
-        </div>
-    {% endif %}
+        {% else %}
+            <p>No recommendations found.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
