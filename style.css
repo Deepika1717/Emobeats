@@ -6,53 +6,25 @@ body {
     padding: 50px;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: #2c2c3c;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
 input[type="text"] {
-    width: 80%;
+    width: 300px;
     padding: 10px;
-    margin: 20px 0;
-    border: none;
     border-radius: 5px;
     font-size: 1rem;
 }
 
-button {
+input[type="submit"] {
     padding: 10px 20px;
-    background-color: #ff5e78;
-    color: white;
+    margin-top: 10px;
     font-size: 1rem;
+    background-color: #1db954;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #ff335c;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 10px 0;
-}
-
 a {
     color: #81ecec;
     text-decoration: none;
-}
-
-.highlight {
-    color: #ffeaa7;
-    font-weight: bold;
 }
