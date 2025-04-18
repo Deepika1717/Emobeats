@@ -1,59 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Mood Music Recommender</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-            background: #f9f9f9;
-            text-align: center;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 300px;
-            font-size: 16px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            background: #1db954;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .songs {
-            margin-top: 30px;
-        }
-        .songs a {
-            display: block;
-            margin: 10px;
-            color: #1db954;
-            text-decoration: none;
-        }
-    </style>
+    <title>EmoBeats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>🎵 Mood Music Recommender</h1>
-    <p>Type how you're feeling and get music that fits your mood!</p>
+    <h1>🎵 EmoBeats</h1>
+    <p>Type how you're feeling and get matching songs!</p>
 
     <form method="POST">
-        <input type="text" name="mood" placeholder="I feel happy today..." required>
-        <input type="submit" value="Recommend Songs">
+        <input type="text" name="mood" placeholder="I'm feeling happy today!" required>
+        <input type="submit" value="Get Songs">
     </form>
-    <div class="songs">
-        {% if song_links %}
-            <h2>Recommended Songs:</h2>
+
+    {% if song_links %}
+        <h2>Recommended Songs:</h2>
+        <ul>
             {% for link in song_links %}
-                <a href="{{ link }}" target="_blank">{{ link }}</a>
+                <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
             {% endfor %}
-        {% else %}
-            <p>No recommendations found.</p>
-        {% endif %}
-    </div>
+        </ul>
+    {% endif %}
 </body>
 </html>
