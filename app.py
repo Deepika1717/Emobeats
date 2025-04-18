@@ -31,6 +31,7 @@ def search_spotify(query):
     tracks = results['tracks']['items']
     song_links = [f"https://open.spotify.com/track/{track['id']}" for track in tracks]
     return song_links
+@app.route("/style.css")
 def serve_css():
     return send_from_directory(".", "style.css")
 @app.route("/", methods=["GET", "POST"])
