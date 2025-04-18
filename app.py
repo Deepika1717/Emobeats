@@ -5,7 +5,7 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Initialize Flask app
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Initialize Spotipy (Spotify API client)
 client_id = "4c9cab2dc7b042c6abfa1480a9a53ceb"  # Replace with your Spotify Client ID
@@ -48,5 +48,5 @@ def index():
     return render_template("index.html", song_links=song_links)
 
 
-if _name_ == "__main__":
+if __name__ == "__main__":
     app.run(debug=True)
