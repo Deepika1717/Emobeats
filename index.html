@@ -2,23 +2,22 @@
 <html>
 <head>
     <title>EmoBeats</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>🎵 EmoBeats</h1>
-    <p>Type how you're feeling and get matching songs!</p>
-
+    <p>Tell us how you feel, and we'll find music that fits your mood.</p>
     <form method="POST">
-        <input type="text" name="mood" placeholder="I'm feeling happy today!" required>
+        <input type="text" name="mood" placeholder="I'm feeling excited!" required>
         <input type="submit" value="Get Songs">
     </form>
 
     {% if song_links %}
-        <h2>Recommended Songs:</h2>
+        <h2>Your Mood Playlist:</h2>
         <ul>
-            {% for link in song_links %}
-                <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
-            {% endfor %}
+        {% for link in song_links %}
+            <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+        {% endfor %}
         </ul>
     {% endif %}
 </body>
