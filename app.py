@@ -39,7 +39,7 @@ def detect_mood(text):
 def get_songs(mood):
     results = sp.search(q=f"{mood} music", type="track", limit=5)
     tracks = results['tracks']['items']
-    return [f"https://open.spotify.com/track/{track['id']}" for track in tracks]
+    return [f"https://open.spotify.com/embed/track/{track['id']}" for track in tracks]
 
 # Route for CSS
 @app.route("/style.css")
