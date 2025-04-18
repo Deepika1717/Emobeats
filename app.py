@@ -48,5 +48,5 @@ def index():
     return render_template("index.html", song_links=song_links)
 
 
-if _name_ == "_main_":
+if _name_ == "__main__":
     app.run(debug=True)
