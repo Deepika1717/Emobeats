@@ -15,6 +15,9 @@ sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=client_id, 
 # Initialize NLTK sentiment analyzer
 nltk.download('vader_lexicon')
 sid = SentimentIntensityAnalyzer()
+def get_html():
+    with open("index.html", "r", encoding="utf-8") as file:
+        return file.read()
 
 def analyze_sentiment(text):
     sentiment = sid.polarity_scores(text)
@@ -28,7 +31,8 @@ def search_spotify(query):
     tracks = results['tracks']['items']
     song_links = [f"https://open.spotify.com/track/{track['id']}" for track in tracks]
     return song_links
-
+def serve_css():
+    return send_from_directory(".", "style.css")
 @app.route("/", methods=["GET", "POST"])
 def index():
     song_links = []
